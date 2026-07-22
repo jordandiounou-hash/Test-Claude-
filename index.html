@@ -42,7 +42,7 @@
       <p class="hero-role reveal">Chief of Staff to the CEO — Stratégie, Opérations &amp; Performance</p>
       <p class="hero-meta reveal">Paris, France</p>
       <div class="hero-actions reveal">
-        <a class="btn btn-primary" href="mailto:diounoujordan@outlook.fr">Me contacter</a>
+        <a class="btn btn-primary js-open-contact" href="mailto:diounoujordan@outlook.fr">Me contacter</a>
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/jordan-diounou/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn btn-ghost" href="https://github.com/jordandiounou-hash" target="_blank" rel="noopener">GitHub</a>
       </div>
@@ -122,6 +122,7 @@
     <div class="wrap">
       <h2 class="section-title reveal"><span class="num">04</span> Contact</h2>
       <p class="contact-lead reveal">Disponible pour échanger sur la stratégie, les opérations ou une nouvelle opportunité.</p>
+      <a class="btn btn-primary js-open-contact reveal" href="mailto:diounoujordan@outlook.fr">Répondre au questionnaire</a>
       <div class="contact-links reveal">
         <a href="mailto:diounoujordan@outlook.fr">diounoujordan@outlook.fr</a>
         <a href="https://www.linkedin.com/in/jordan-diounou/" target="_blank" rel="noopener">linkedin.com/in/jordan-diounou</a>
@@ -137,6 +138,52 @@
     <span>© 2026 Jordan Diounou</span>
   </div>
 </footer>
+
+<dialog id="contactDialog" class="contact-dialog" aria-labelledby="contactDialogTitle">
+  <form id="contactForm" class="contact-form">
+    <div class="dialog-head">
+      <h2 id="contactDialogTitle">Me contacter</h2>
+      <button type="button" class="dialog-close" id="dialogClose" aria-label="Fermer">&times;</button>
+    </div>
+    <p class="dialog-lead">Quelques infos pour que je puisse te répondre au mieux — ça ouvrira ton client mail avec le message pré-rempli.</p>
+
+    <label class="field">
+      <span>Nom</span>
+      <input type="text" name="nom" required autocomplete="name">
+    </label>
+
+    <label class="field">
+      <span>Email</span>
+      <input type="email" name="email" required autocomplete="email">
+    </label>
+
+    <label class="field">
+      <span>Société / organisation <em>(optionnel)</em></span>
+      <input type="text" name="societe" autocomplete="organization">
+    </label>
+
+    <label class="field">
+      <span>Vous me contactez pour…</span>
+      <select name="motif" required>
+        <option value="" disabled selected>Choisir…</option>
+        <option value="Opportunité professionnelle">Opportunité professionnelle</option>
+        <option value="Intervention / cours / conférence">Intervention / cours / conférence</option>
+        <option value="Conseil &amp; stratégie">Conseil &amp; stratégie</option>
+        <option value="Networking">Networking</option>
+        <option value="Autre">Autre</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span>Message</span>
+      <textarea name="message" rows="4" required></textarea>
+    </label>
+
+    <div class="dialog-actions">
+      <button type="submit" class="btn btn-primary">Envoyer par email</button>
+    </div>
+  </form>
+</dialog>
 
 <script src="script.js"></script>
 </body>

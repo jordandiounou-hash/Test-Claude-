@@ -166,9 +166,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding: 12px 22px;
   border-radius: 2px;
   text-decoration: none;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 500;
   border: 1px solid transparent;
+  cursor: pointer;
   transition: opacity 0.2s ease, background 0.2s ease;
 }
 
@@ -302,6 +304,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin-bottom: 28px;
 }
 
+.section-contact .btn {
+  margin-bottom: 40px;
+}
+
 .contact-links {
   display: flex;
   flex-direction: column;
@@ -320,6 +326,98 @@ ul { margin: 0; padding: 0; list-style: none; }
 .contact-links a:hover {
   color: var(--accent);
   border-color: var(--accent);
+}
+
+/* Contact dialog */
+.contact-dialog {
+  border: none;
+  border-radius: 3px;
+  padding: 0;
+  max-width: 480px;
+  width: calc(100% - 48px);
+  max-height: 85vh;
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.contact-dialog::backdrop {
+  background: rgba(15, 13, 10, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.dialog-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dialog-head h2 {
+  font-size: 22px;
+}
+
+.dialog-close {
+  background: none;
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 2px 4px;
+}
+.dialog-close:hover { color: var(--accent); }
+
+.dialog-lead {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: -8px 0 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.field span { color: var(--text-muted); }
+.field em { font-style: normal; opacity: 0.75; }
+
+.field input,
+.field select,
+.field textarea {
+  font-family: var(--font-body);
+  font-size: 15px;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: var(--bg-alt);
+  color: var(--text);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.field textarea { resize: vertical; min-height: 90px; }
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
 }
 
 /* Footer */
